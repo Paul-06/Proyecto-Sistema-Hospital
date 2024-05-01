@@ -1,0 +1,111 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SistemaHospital
+build_property.RootNamespace = SistemaHospital
+build_property.ProjectDir = D:\Programming\CSharp\SistemaHospital\SistemaHospital\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\Programming\CSharp\SistemaHospital\SistemaHospital
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Cargo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZ29cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Cargo/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZ29cVXBzZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Empleado/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Empleado/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cVXBzZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Especialidad/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Especialidad/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXFVwc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Paciente/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Paciente/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcVXBzZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoEmpleado/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0VtcGxlYWRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoEmpleado/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0VtcGxlYWRvXFVwc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoExamen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0V4YW1lblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoExamen/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0V4YW1lblxVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoPago/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1BhZ29cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoPago/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1BhZ29cVXBzZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoTratamiento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1RyYXRhbWllbnRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/TipoTratamiento/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1RyYXRhbWllbnRvXFVwc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-qibesnrnz2
