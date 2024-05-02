@@ -26,7 +26,7 @@ namespace SistemaHospital.Repository.Implementation
             _context.Dispose(); // Liberar memoria
         }
 
-        public async Task Guardar()
+        public async Task GuardarCambios()
         {
             await _context.SaveChangesAsync();
         }

@@ -71,7 +71,7 @@ namespace SistemaHospital.Controllers
                     TempData[DS.Exitosa] = "Cargo actualizado exitosamente"; // Será usado para las notificaciones
                 }
 
-                await _unidadTrabajo.Guardar(); // Guardar los cambios en la base de datos
+                await _unidadTrabajo.GuardarCambios(); // Guardar los cambios en la base de datos
 
                 return RedirectToAction(nameof(Index)); // Redirigir al Index
             }
@@ -96,7 +96,7 @@ namespace SistemaHospital.Controllers
             _unidadTrabajo.Cargo.Remover(registro);
 
             // Guardar los cambios
-            await _unidadTrabajo.Guardar();
+            await _unidadTrabajo.GuardarCambios();
 
             // Enviamos el mensaje de éxito
             return new JsonResult(new { success = true, message = "Cargo eliminado exitosamente" });
