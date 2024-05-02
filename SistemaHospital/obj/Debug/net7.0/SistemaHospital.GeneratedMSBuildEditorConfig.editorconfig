@@ -62,6 +62,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Shared/_BotonesActualizarYRegresar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb3RvbmVzQWN0dWFsaXphcllSZWdyZXNhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Shared/_BotonesCrearYRegresar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb3RvbmVzQ3JlYXJZUmVncmVzYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Shared/_Notificaciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYWNpb25lcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

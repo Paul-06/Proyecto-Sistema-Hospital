@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SistemaHospital.Models;
+using SistemaHospital.Repository.Abstract;
+using SistemaHospital.Repository.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddDbContext<BdHospitalContext>(options => { // Básicamente, es una función anónima
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+// Servicio IUnidadTrabajo
+builder.Services.AddScoped<IUnidadTrabajo, UnidadTrabajo>(); // Se agrega la interfaz y su implementación
 
 var app = builder.Build();
 

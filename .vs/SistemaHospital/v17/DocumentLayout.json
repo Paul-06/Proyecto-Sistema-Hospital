@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Programming\\CSharp\\SistemaHospital\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|d:\\programming\\csharp\\sistemahospital\\sistemahospital\\controllers\\tipopagocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\controllers\\tipopagocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|d:\\programming\\csharp\\sistemahospital\\sistemahospital\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|d:\\programming\\csharp\\sistemahospital\\sistemahospital\\controllers\\tipotratamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\controllers\\tipotratamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|d:\\programming\\csharp\\sistemahospital\\sistemahospital\\views\\cargo\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\cargo\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|d:\\programming\\csharp\\sistemahospital\\sistemahospital\\controllers\\cargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\controllers\\cargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TipoTratamientoController.cs",
-              "DocumentMoniker": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "RelativeDocumentMoniker": "SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "RelativeToolTip": "SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAIwAwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T21:46:08.043Z",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\appsettings.json",
+              "RelativeDocumentMoniker": "SistemaHospital\\appsettings.json",
+              "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\appsettings.json",
+              "RelativeToolTip": "SistemaHospital\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-02T21:37:48.372Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TipoPagoController.cs",
-              "DocumentMoniker": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "RelativeDocumentMoniker": "SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "RelativeToolTip": "SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "DocumentIndex": 1,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAcwEoAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T21:22:14.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CargoController.cs",
+              "DocumentMoniker": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\CargoController.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Controllers\\CargoController.cs",
+              "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\CargoController.cs",
+              "RelativeToolTip": "SistemaHospital\\Controllers\\CargoController.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAUwH0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T21:44:53.307Z",
+              "WhenOpened": "2024-05-02T21:08:27.86Z",
               "EditorCaption": ""
             }
           ]
