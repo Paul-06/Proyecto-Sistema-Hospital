@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\SistemaHospital.csproj": {}
+    "C:\\Users\\maril\\Documents\\ola\\Proyecto-Sistema-Hospital\\SistemaHospital\\SistemaHospital.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\SistemaHospital.csproj": {
+    "C:\\Users\\maril\\Documents\\ola\\Proyecto-Sistema-Hospital\\SistemaHospital\\SistemaHospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\SistemaHospital.csproj",
+        "projectUniqueName": "C:\\Users\\maril\\Documents\\ola\\Proyecto-Sistema-Hospital\\SistemaHospital\\SistemaHospital.csproj",
         "projectName": "SistemaHospital",
-        "projectPath": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\SistemaHospital.csproj",
-        "packagesPath": "C:\\Users\\jeanv\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\obj\\",
+        "projectPath": "C:\\Users\\maril\\Documents\\ola\\Proyecto-Sistema-Hospital\\SistemaHospital\\SistemaHospital.csproj",
+        "packagesPath": "C:\\Users\\maril\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maril\\Documents\\ola\\Proyecto-Sistema-Hospital\\SistemaHospital\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jeanv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maril\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -1,1 +1,101 @@
-﻿
+﻿@model SistemaHospital.Models.Paciente
+@{
+    var titulo = "Agregar paciente";
+    var accion = "Guardar";
+}
+
+<form method="POST" asp-action="Upsert">
+    <div style="padding-left: 15%; padding-right: 15%; padding-bottom: 4rem;">
+        <div class="row border-0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+
+        @if (Model.IdPaciente != 0)
+        {
+            // Actualizar paciente
+            titulo = "Actualizar paciente";
+            accion = "Actualizar";
+            <input type="hidden" asp-for="IdPaciente" id="id" />
+        }
+
+        <div class="col-12 border-bottom p-0">
+            <h2 class="text-primary">@titulo</h2>
+        </div>
+
+        @* Input DNI *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Dni</label>
+                <input type="text" asp-for="IdPersonaNavigation.Dni" class="form-control" id="dni" />
+                <span asp-validation-for="IdPersonaNavigation.Dni" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Apellido Paterno *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Apellido Paterno</label>
+                <input type="text" asp-for="IdPersonaNavigation.ApellidoPaterno" class="form-control" id="apellidoPaterno" />
+                <span asp-validation-for="IdPersonaNavigation.ApellidoPaterno" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Apellido Materno *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Apellido Materno</label>
+                <input type="text" asp-for="IdPersonaNavigation.ApellidoMaterno" class="form-control" id="apellidoMaterno" />
+                <span asp-validation-for="IdPersonaNavigation.ApellidoMaterno" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Nombre *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Nombres</label>
+                <input type="text" asp-for="IdPersonaNavigation.Nombres" class="form-control" id="nombre" />
+                <span asp-validation-for="IdPersonaNavigation.Nombres" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Fecha de Nacimiento *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Fecha de Nacimiento</label>
+                <input type="date" asp-for="IdPersonaNavigation.FechaNacimiento" class="form-control" id="fechaNacimiento" />
+                <span asp-validation-for="IdPersonaNavigation.FechaNacimiento" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Celular *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Celular</label>
+                <input type="text" asp-for="IdPersonaNavigation.Celular" class="form-control" id="celular" />
+                <span asp-validation-for="IdPersonaNavigation.Celular" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Correo *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Correo</label>
+                <input type="email" asp-for="IdPersonaNavigation.Correo" class="form-control" id="correo" />
+                <span asp-validation-for="IdPersonaNavigation.Correo" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Dirección *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Dirección</label>
+                <input type="text" asp-for="IdPersonaNavigation.Direccion" class="form-control" id="direccion" />
+                <span asp-validation-for="IdPersonaNavigation.Direccion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <button class="btn btn-success" type="submit">@accion</button>
+    </div>
+</form>

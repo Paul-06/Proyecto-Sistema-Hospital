@@ -1,1 +1,36 @@
-﻿
+﻿@model SistemaHospital.Models.TipoPago
+@{
+    var titulo = "Agregar Tipo Pago";
+    var accion = "Guardar";
+}
+
+<form method="POST" asp-action="Upsert">
+    <div style="padding-left: 15%; padding-right: 15%; padding-bottom: 4rem;">
+        <div class="row border-0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+
+        @if (Model.IdTipoPago != 0)
+        {
+            // Actualizar bodega
+            titulo = "Actualizar Tipo Pago";
+            accion = "Actualizar";
+            <input type="hidden" asp-for="IdTipoPago" id="id" />
+        }
+
+        <div class="col-12 border-bottom p-0">
+            <h2 class="text-primary">@titulo</h2>
+        </div>
+
+        @* Input Nombre *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Descripcion</label>
+                <input type="text" asp-for="Descripcion" class="form-control" id="descripcion" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button class="btn btn-success" type="submit">@accion</button>
+    </div>
+</form>
