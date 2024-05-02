@@ -1,1 +1,47 @@
-﻿
+﻿@model SistemaHospital.Models.Especialidad
+@{
+    var titulo = "Agregar Especialidad";
+    var accion = "Guardar";
+}
+
+<form method="POST" asp-action="Upsert">
+    <div style="padding-left: 15%; padding-right: 15%; padding-bottom: 4rem;">
+        <div class="row border-0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+
+        @if (Model.IdEspecialidad != 0)
+        {
+            // Actualizar bodega
+            titulo = "Actualizar Especialidad";
+            accion = "Actualizar";
+            <input type="hidden" asp-for="IdEspecialidad" id="id" />
+        }
+
+        <div class="col-12 border-bottom p-0">
+            <h2 class="text-primary">@titulo</h2>
+        </div>
+
+        @* Input Nombre *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" asp-for="Nombre" class="form-control" id="nombre" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Descripcion *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Descripción</label>
+                <textarea type="text" asp-for="Descripcion" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <button class="btn btn-success" type="submit">@accion</button>
+    </div>
+</form>
