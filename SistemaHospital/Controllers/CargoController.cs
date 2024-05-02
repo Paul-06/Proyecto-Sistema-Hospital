@@ -17,10 +17,6 @@ namespace SistemaHospital.Controllers
         }
 
         #region NAVEGACION
-        #endregion
-
-        #region API
-        #endregion
         public IActionResult Index()
         {
             return View();
@@ -46,7 +42,9 @@ namespace SistemaHospital.Controllers
 
             return View(cargo);
         }
+        #endregion
 
+        #region API
         [HttpGet]
         public async Task<JsonResult> ListarCargos()
         {
@@ -124,5 +122,6 @@ namespace SistemaHospital.Controllers
             // Retornamos la coincidencia (true or false)
             return coincide ? new JsonResult(new { data = true }) : new JsonResult(new { data = false });
         }
+        #endregion
     }
 }
