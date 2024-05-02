@@ -1,7 +1,7 @@
 ﻿@model SistemaHospital.Models.Cargo
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     var titulo = "Agregar cargo";
-    var accion = "Guardar";
 }
 
 <form method="POST" asp-action="Upsert">
@@ -14,7 +14,6 @@
         {
             // Actualizar bodega
             titulo = "Actualizar cargo";
-            accion = "Actualizar";
             <input type="hidden" asp-for="IdCargo" id="id"/>
         }
 
@@ -42,6 +41,41 @@
 
         <br />
 
-        <button class="btn btn-success" type="submit">@accion</button>
+        <div>
+            @if (Model.IdCargo != 0)
+            {
+                <partial name="_BotonesActualizarYRegresar" model="Model.IdCargo" />
+            }
+            else
+            {
+                <partial name="_BotonesCrearYRegresar" />
+            }
+        </div>
     </div>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.getElementById('nombre').addEventListener('change', function () {
+            validarNombre();
+        });
+
+        function validarNombre() {
+            var url = '@Url.Content("~/")' + 'Cargo/ValidarNombre';
+            var id = '#id';
+            var nombre = '#nombre';
+
+            $.getJSON(url, { id: $(id).val(), nombre: $(nombre).val() }, function (data) {
+                $.each(data, function (key, value) {
+                    if (value) {
+                        var txt_nombre = document.getElementById('nombre');
+                        swal("Error", `El nombre "${txt_nombre.value}" ya existe en la base de datos.`, "error");
+                        txt_nombre.value = "";
+                    }
+                });
+            });
+        }
+    </script>
+}

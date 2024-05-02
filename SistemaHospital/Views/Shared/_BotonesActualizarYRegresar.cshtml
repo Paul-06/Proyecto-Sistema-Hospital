@@ -1,0 +1,12 @@
+﻿@model int
+
+<div class="d-grid gap-2 d-md-block">
+    <button type="submit" class="btn btn-success" asp-route-id="@Model" onfocus="false">
+        <i class="fa-regular fa-pen-to-square"></i>
+        Guardar cambios
+    </button>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-left"></i>
+        Regresar
+    </a>
+</div>
