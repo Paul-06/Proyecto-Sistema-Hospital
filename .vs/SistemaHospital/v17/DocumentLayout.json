@@ -1,14 +1,78 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Programming\\CSharp\\SistemaHospital\\",
+  "WorkspaceRootPath": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|d:\\programming\\csharp\\sistemahospital\\sistemahospital\\controllers\\tipopagocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\controllers\\tipopagocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\empleado\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\empleado\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|d:\\programming\\csharp\\sistemahospital\\sistemahospital\\controllers\\tipotratamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\controllers\\tipotratamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\models\\tipoempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\models\\tipoempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\cargo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\cargo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\tipoexamen\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\tipoexamen\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\tipoexamen\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\tipoexamen\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\models\\tipoexaman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\models\\tipoexaman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\controllers\\tipoexamencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\controllers\\tipoexamencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\controllers\\cargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\controllers\\cargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\tipotratamiento\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\tipotratamiento\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\cargo\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\cargo\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\models\\examan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\models\\examan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\models\\tipotratamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\models\\tipotratamiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\models\\tipopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\models\\tipopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\wwwroot\\js\\cargo.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\wwwroot\\js\\cargo.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\tipopago\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\tipopago\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|e:\\senati\\6 semestre\\trabajo\\proyecto-sistema-hospital\\sistemahospital\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4AA0D5E-EB98-4C9D-B272-228F655A2699}|SistemaHospital\\SistemaHospital.csproj|solutionrelative:sistemahospital\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,37 +82,235 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "cargo.js",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\wwwroot\\js\\cargo.js",
+              "RelativeDocumentMoniker": "SistemaHospital\\wwwroot\\js\\cargo.js",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\wwwroot\\js\\cargo.js",
+              "RelativeToolTip": "SistemaHospital\\wwwroot\\js\\cargo.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwCAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-01T22:44:00.392Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TipoTratamientoController.cs",
-              "DocumentMoniker": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "RelativeDocumentMoniker": "SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "RelativeToolTip": "SistemaHospital\\Controllers\\TipoTratamientoController.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAIwAwAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T21:46:08.043Z",
-              "EditorCaption": ""
+              "DocumentIndex": 9,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoTratamiento\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\TipoTratamiento\\Upsert.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoTratamiento\\Upsert.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\TipoTratamiento\\Upsert.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T23:13:32.322Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\Cargo\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\Cargo\\Index.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\Cargo\\Index.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\Cargo\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T02:29:36.732Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TipoPagoController.cs",
-              "DocumentMoniker": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "RelativeDocumentMoniker": "SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "RelativeToolTip": "SistemaHospital\\Controllers\\TipoPagoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T21:44:53.307Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\Empleado\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\Empleado\\Index.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\Empleado\\Index.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\Empleado\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T02:23:35.129Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\Empleado.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Models\\Empleado.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\Empleado.cs",
+              "RelativeToolTip": "SistemaHospital\\Models\\Empleado.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T02:17:59.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TipoEmpleado.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoEmpleado.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Models\\TipoEmpleado.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoEmpleado.cs",
+              "RelativeToolTip": "SistemaHospital\\Models\\TipoEmpleado.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T02:17:52.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TipoExamenController.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Controllers\\TipoExamenController.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Controllers\\TipoExamenController.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Controllers\\TipoExamenController.cs",
+              "RelativeToolTip": "SistemaHospital\\Controllers\\TipoExamenController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T02:14:36.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CargoController.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Controllers\\CargoController.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Controllers\\CargoController.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Controllers\\CargoController.cs",
+              "RelativeToolTip": "SistemaHospital\\Controllers\\CargoController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T01:37:28.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoExamen\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\TipoExamen\\Index.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoExamen\\Index.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\TipoExamen\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T00:52:02.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoExamen\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\TipoExamen\\Upsert.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoExamen\\Upsert.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\TipoExamen\\Upsert.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T00:52:04.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Examan.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\Examan.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Models\\Examan.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\Examan.cs",
+              "RelativeToolTip": "SistemaHospital\\Models\\Examan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T01:15:18.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Upsert.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T00:29:19.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TipoExaman.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoExaman.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Models\\TipoExaman.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoExaman.cs",
+              "RelativeToolTip": "SistemaHospital\\Models\\TipoExaman.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T01:09:11.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T00:48:14.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\_ViewStart.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T00:48:25.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TipoTratamiento.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoTratamiento.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Models\\TipoTratamiento.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoTratamiento.cs",
+              "RelativeToolTip": "SistemaHospital\\Models\\TipoTratamiento.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T00:46:27.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TipoPago.cs",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoPago.cs",
+              "RelativeDocumentMoniker": "SistemaHospital\\Models\\TipoPago.cs",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Models\\TipoPago.cs",
+              "RelativeToolTip": "SistemaHospital\\Models\\TipoPago.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T01:07:35.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoPago\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaHospital\\Views\\TipoPago\\Index.cshtml",
+              "ToolTip": "E:\\SENATI\\6 SEMESTRE\\TRABAJO\\Proyecto-Sistema-Hospital\\SistemaHospital\\Views\\TipoPago\\Index.cshtml",
+              "RelativeToolTip": "SistemaHospital\\Views\\TipoPago\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T00:51:55.653Z"
             }
           ]
         }
