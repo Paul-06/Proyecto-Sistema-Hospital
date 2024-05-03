@@ -51,8 +51,7 @@
               "RelativeToolTip": "SistemaHospital\\Views\\Cargo\\Upsert.cshtml",
               "ViewState": "AQIAADMAAAAAAAAAAAAcwEoAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T21:22:14.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:22:14.217Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "SistemaHospital\\Controllers\\CargoController.cs",
               "ViewState": "AQIAAFoAAAAAAAAAAAAUwH0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T21:08:27.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:08:27.86Z"
             }
           ]
         }

@@ -10,6 +10,12 @@ namespace SistemaHospital.Repository.Implementation
 
         // Propiedades
         public ICargoRepositorio Cargo { get; private set; }
+        public IEspecialidadRepositorio Especialidad { get; private set; }
+        public ITipoEmpleadoRepositorio TipoEmpleado { get; private set; }
+        public ITipoPagoRepositorio TipoPago { get; private set; }
+        public IPacienteRepositorio Paciente { get; private set; }
+        public ITipoExamenRepositorio TipoExamen { get; private set; }
+        public ITipoTratamientoRepositorio TipoTratamiento { get; private set; }
 
         // Hacemos la inyección en el  constructor
         public UnidadTrabajo(BdHospitalContext context)
@@ -19,6 +25,12 @@ namespace SistemaHospital.Repository.Implementation
             // Las implementaciones necesitan de _context para poder realizar
             // sus operaciones
             Cargo = new CargoRepositorio(_context);
+            Especialidad = new EspecialidadRepositorio(_context);
+            TipoEmpleado = new TipoEmpleadoRepositorio(_context);
+            TipoPago = new TipoPagoRepositorio(_context);
+            Paciente = new PacienteRepositorio(_context);
+            TipoExamen = new TipoExamenRepositorio(_context);
+            TipoTratamiento = new TipoTratamientoRepositorio(_context);
         }
 
         public void Dispose()
@@ -26,7 +38,7 @@ namespace SistemaHospital.Repository.Implementation
             _context.Dispose(); // Liberar memoria
         }
 
-        public async Task Guardar()
+        public async Task GuardarCambios()
         {
             await _context.SaveChangesAsync();
         }

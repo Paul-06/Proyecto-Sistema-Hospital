@@ -17,8 +17,28 @@
       "PackagePath": "staticwebassets\\js\\cargo.js"
     },
     {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\especialidad.js",
+      "PackagePath": "staticwebassets\\js\\especialidad.js"
+    },
+    {
       "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\tipoEmpleado.js",
+      "PackagePath": "staticwebassets\\js\\tipoEmpleado.js"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\tipoExamen.js",
+      "PackagePath": "staticwebassets\\js\\tipoExamen.js"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\tipoPago.js",
+      "PackagePath": "staticwebassets\\js\\tipoPago.js"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\tipoTratamiento.js",
+      "PackagePath": "staticwebassets\\js\\tipoTratamiento.js"
     },
     {
       "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\lib\\bootstrap\\LICENSE",

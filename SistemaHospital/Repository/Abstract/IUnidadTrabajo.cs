@@ -3,6 +3,12 @@
     public interface IUnidadTrabajo : IDisposable // Para liberar recursos
     {
         ICargoRepositorio Cargo { get; }
-        Task Guardar();
+        IEspecialidadRepositorio Especialidad { get; }
+        ITipoEmpleadoRepositorio TipoEmpleado { get; }
+        ITipoPagoRepositorio TipoPago { get; }
+        IPacienteRepositorio Paciente { get; }
+        ITipoExamenRepositorio TipoExamen { get; }
+        ITipoTratamientoRepositorio TipoTratamiento { get; }
+        Task GuardarCambios();
     }
 }

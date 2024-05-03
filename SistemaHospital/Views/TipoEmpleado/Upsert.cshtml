@@ -1,1 +1,81 @@
-﻿
+﻿@model SistemaHospital.Models.TipoEmpleado
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Agregar tipo de empleado";
+}
+
+<form method="POST" asp-action="Upsert">
+    <div style="padding-left: 15%; padding-right: 15%; padding-bottom: 4rem;">
+        <div class="row border-0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+
+        @if (Model.IdTipoEmpleado != 0)
+        {
+            // Actualizar tipo de empleado
+            titulo = "Actualizar tipo de empleado";
+            <input type="hidden" asp-for="IdTipoEmpleado" id="id" />
+        }
+
+        <div class="col-12 border-bottom p-0">
+            <h2 class="text-primary">@titulo</h2>
+        </div>
+
+        @* Input Nombre *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" asp-for="Nombre" class="form-control" id="nombre" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Input Descripcion *@
+        <div class="row mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label class="form-label">Descripción</label>
+                <textarea type="text" asp-for="Descripcion" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <div>
+            @if (Model.IdTipoEmpleado != 0)
+            {
+                <partial name="_BotonesActualizarYRegresar" model="Model.IdTipoEmpleado" />
+            }
+            else
+            {
+                <partial name="_BotonesCrearYRegresar" />
+            }
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.getElementById('nombre').addEventListener('change', function () {
+            validarNombre();
+        });
+
+        function validarNombre() {
+            var url = '@Url.Content("~/")' + 'TipoEmpleado/ValidarNombre';
+            var id = '#id';
+            var nombre = '#nombre';
+
+            $.getJSON(url, { id: $(id).val(), nombre: $(nombre).val() }, function (data) {
+                $.each(data, function (key, value) {
+                    if (value) {
+                        var txt_nombre = document.getElementById('nombre');
+                        swal("Error", `El nombre "${txt_nombre.value}" ya existe en la base de datos.`, "error");
+                        txt_nombre.value = "";
+                    }
+                });
+            });
+        }
+    </script>
+}
