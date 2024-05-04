@@ -99,10 +99,17 @@ namespace SistemaHospital.Controllers
                     await _unidadTrabajo.GuardarCambios();
 
                     var paciente = new Paciente{
-                        IdPersona = persona.IdPersona, // Al ejecutar SaveChanges(), se recupera el Id del objeto
+                        IdPersona = persona.IdPersona // Al ejecutar SaveChanges(), se actualiza (recupera) el Id del objeto
                     };
 
                     await _unidadTrabajo.Paciente.Agregar(paciente);
+                    await _unidadTrabajo.GuardarCambios();
+
+                    var historialMedico = new HistorialMedico{
+                        IdPaciente = paciente.IdPaciente // Al ejecutar SaveChanges(), se actualiza (recupera) el Id del objeto
+                    };
+
+                    await _unidadTrabajo.HistorialMedico.Agregar(historialMedico);
                     TempData[DS.Exitosa] = "Paciente agregado exitosamente"; // Será usado para las notificaciones
                 }
                 else
@@ -138,24 +145,35 @@ namespace SistemaHospital.Controllers
         public async Task<JsonResult> Eliminar(int id)
         {
             // Buscamos el registro a eliminar
-            var registro = await _unidadTrabajo.Paciente.ObtenerPorId(id);
+            var paciente = await _unidadTrabajo.Paciente.ObtenerPorId(id);
 
-            if (registro is null)
+            if (paciente is null)
             {
                 return new JsonResult(new { success = false, message = "Error al borrar el paciente" });
             }
 
-            var persona = await _unidadTrabajo.Persona.ObtenerPorId((int)registro.IdPersona!);
+            var persona = await _unidadTrabajo.Persona.ObtenerPrimero(pe => pe.IdPersona == paciente.IdPersona);
 
             if (persona is null)
             {
                 return new JsonResult(new { success = false, message = "Error al borrar el paciente" });
             }
 
-            // En caso se encuentre el registro
-            _unidadTrabajo.Paciente.Remover(registro);
+            var historialMedico = await _unidadTrabajo.HistorialMedico.ObtenerPrimero(hm => hm.IdPaciente == paciente.IdPaciente);
+            
+            if (historialMedico is null)
+            {
+                return new JsonResult(new { success = false, message = "Error al borrar el paciente" });
+            }
 
-            // Borramos la persona asociada al paciente
+            // En caso se encuentre el registro
+            // Primero borramos el historial médico
+            _unidadTrabajo.HistorialMedico.Remover(historialMedico);
+
+            // Luego, borramos el paciente
+            _unidadTrabajo.Paciente.Remover(paciente);
+
+            // Finalmente borramos la persona asociada al paciente
             _unidadTrabajo.Persona.Remover(persona);
 
             // Guardar los cambios

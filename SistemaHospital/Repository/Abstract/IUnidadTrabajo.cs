@@ -11,6 +11,7 @@
         ITipoTratamientoRepositorio TipoTratamiento { get; }
         IPersonaRepositorio Persona { get; }
         IEmpleadoRepositorio Empleado { get; }
+        IHistorialMedicoRepositorio HistorialMedico { get; }
         Task GuardarCambios();
     }
 }
