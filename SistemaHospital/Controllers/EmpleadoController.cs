@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SistemaHospital.Models;
 using SistemaHospital.Models.ViewModels;
 using SistemaHospital.Repository.Abstract;
+using SistemaHospital.Utils;
 
 namespace SistemaHospital.Controllers
 {
@@ -48,6 +50,7 @@ namespace SistemaHospital.Controllers
 
             // Mapeo de datos del Empleado a EmpleadoVm
             empleadoVm.Id = empleado.IdEmpleado;
+            empleadoVm.IdPersona = empleado.IdPersona;
             empleadoVm.IdCargo = empleado.IdCargo;
             empleadoVm.IdEspecialidad = empleado.IdEspecialidad;
             empleadoVm.IdTipoEmpleado = empleado.IdTipoEmpleado;
@@ -74,82 +77,112 @@ namespace SistemaHospital.Controllers
         {
             var empleados = await _unidadTrabajo.Empleado.ObtenerTodos(
                 null, null,
-                "IdPersonaNavigation,IdCargoNavigation,IdEspecialidadNavigation,IdTipoEmpleadoNavigation",
-                false
+                "IdPersonaNavigation,IdCargoNavigation,IdEspecialidadNavigation,IdTipoEmpleadoNavigation"
             );
-            return new JsonResult(new { data = empleados });
+
+            var empleadoLista = empleados.Select(e => e.ToDto());
+            return new JsonResult(new { data = empleadoLista });
         }
 
-        // [HttpPost]
-        // [ValidateAntiForgeryToken] // Sirve para evitar solicitudes externas
-        // public async Task<IActionResult> Upsert(Especialidad especialidad)
-        // {
-        //     if (ModelState.IsValid) // Si el modelo es válido
-        //     {
-        //         if (especialidad.IdEspecialidad == 0) // Significa un nuevo registro
-        //         {
-        //             await _unidadTrabajo.Especialidad.Agregar(especialidad);
-        //             TempData[DS.Exitosa] = "Especialidad agregada exitosamente"; // Será usado para las notificaciones
-        //         }
-        //         else
-        //         {
-        //             _unidadTrabajo.Especialidad.Actualizar(especialidad);
-        //             TempData[DS.Exitosa] = "Especialidad actualizada exitosamente"; // Será usado para las notificaciones
-        //         }
+        [HttpPost]
+        [ValidateAntiForgeryToken] // Sirve para evitar solicitudes externas
+        public async Task<IActionResult> Upsert(EmpleadoVm empleadoVm)
+        {
+            if (ModelState.IsValid) // Si el modelo es válido
+            {
+                if (empleadoVm.Id == 0) // Significa un nuevo registro
+                {
+                    var persona = new Persona{
+                        Dni = empleadoVm.Dni,
+                        ApellidoPaterno = empleadoVm.ApellidoPaterno,
+                        ApellidoMaterno = empleadoVm.ApellidoMaterno,
+                        Nombres = empleadoVm.Nombres,
+                        FechaNacimiento = empleadoVm.FechaNacimiento,
+                        Celular = empleadoVm.Celular,
+                        Correo = empleadoVm.Correo,
+                        Direccion = empleadoVm.Direccion
+                    };
 
-        //         await _unidadTrabajo.GuardarCambios(); // Guardar los cambios en la base de datos
+                    await _unidadTrabajo.Persona.Agregar(persona);
+                    await _unidadTrabajo.GuardarCambios();
 
-        //         return RedirectToAction(nameof(Index)); // Redirigir al Index
-        //     }
+                    var empleado = new Empleado{
+                        IdPersona = persona.IdPersona, // Al ejecutar SaveChanges(), se recupera el Id del objeto
+                        IdTipoEmpleado = empleadoVm.IdTipoEmpleado,
+                        IdEspecialidad = empleadoVm.IdEspecialidad,
+                        IdCargo = empleadoVm.IdCargo
+                    };
 
-        //     // Si no se hace nada
-        //     TempData[DS.Error] = "Error al guardar los cambios"; // Notificación de error
-        //     return View(especialidad);
-        // }
+                    await _unidadTrabajo.Empleado.Agregar(empleado);
+                    TempData[DS.Exitosa] = "Empleado agregado exitosamente"; // Será usado para las notificaciones
+                }
+                else
+                {
+                    var persona = new Persona{
+                        IdPersona = (int)empleadoVm.IdPersona!,
+                        Dni = empleadoVm.Dni,
+                        ApellidoPaterno = empleadoVm.ApellidoPaterno,
+                        ApellidoMaterno = empleadoVm.ApellidoMaterno,
+                        Nombres = empleadoVm.Nombres,
+                        FechaNacimiento = empleadoVm.FechaNacimiento,
+                        Celular = empleadoVm.Celular,
+                        Correo = empleadoVm.Correo,
+                        Direccion = empleadoVm.Direccion
+                    };
 
-        // [HttpDelete]
-        // public async Task<JsonResult> Eliminar(int id)
-        // {
-        //     // Buscamos el registro a eliminar
-        //     var registro = await _unidadTrabajo.Especialidad.ObtenerPorId(id);
+                    _unidadTrabajo.Persona.Actualizar(persona);
 
-        //     if (registro is null)
-        //     {
-        //         return new JsonResult(new { success = false, message = "Error al borrar la especialidad" });
-        //     }
+                    var empleado = new Empleado{
+                        IdTipoEmpleado = empleadoVm.IdTipoEmpleado,
+                        IdEspecialidad = empleadoVm.IdEspecialidad,
+                        IdCargo = empleadoVm.IdCargo
+                    };
 
-        //     // En caso se encuentre el registro
-        //     _unidadTrabajo.Especialidad.Remover(registro);
+                    _unidadTrabajo.Empleado.Actualizar(empleado);
 
-        //     // Guardar los cambios
-        //     await _unidadTrabajo.GuardarCambios();
+                    TempData[DS.Exitosa] = "Empleado actualizado exitosamente"; // Será usado para las notificaciones
+                }
 
-        //     // Enviamos el mensaje de éxito
-        //     return new JsonResult(new { success = true, message = "Especialidad eliminada exitosamente" });
-        // }
+                await _unidadTrabajo.GuardarCambios(); // Guardar los cambios en la base de datos
 
-        // [ActionName("ValidarNombre")]
-        // public async Task<JsonResult> ValidarNombre(string nombre, int id = 0)
-        // {
-        //     bool coincide = false; // Variable para identificar si hay coindicendia o no
+                return RedirectToAction(nameof(Index)); // Redirigir al Index
+            }
 
-        //     // Retornamos todos los elementos de Especialidad
-        //     var lista = await _unidadTrabajo.Especialidad.ObtenerTodos();
+            // Si no se hace nada
+            TempData[DS.Error] = "Error al guardar los cambios"; // Notificación de error
+            return View(empleadoVm);
+        }
 
-        //     // Si el id es 0 (nuevo registro), verificamos si el nombre ya existe en la lista
-        //     if (id == 0)
-        //     {
-        //         coincide = lista.Any(e => e.Nombre!.ToLower().Trim() == nombre.ToLower().Trim());
-        //     }
-        //     // Si el id no es 0 (registro existente), verificamos si el nombre ya existe en la lista y que el id sea diferente
-        //     else
-        //     {
-        //         coincide = lista.Any(e => e.Nombre!.ToLower().Trim() == nombre.ToLower().Trim() && e.IdEspecialidad != id);
-        //     }
+        [HttpDelete]
+        public async Task<JsonResult> Eliminar(int id)
+        {
+            // Buscamos el registro a eliminar
+            var registro = await _unidadTrabajo.Empleado.ObtenerPorId(id);
 
-        //     // Retornamos la coincidencia (true or false)
-        //     return coincide ? new JsonResult(new { data = true }) : new JsonResult(new { data = false });
-        // }
+            if (registro is null)
+            {
+                return new JsonResult(new { success = false, message = "Error al borrar el empleado" });
+            }
+
+            var persona = await _unidadTrabajo.Persona.ObtenerPorId((int)registro.IdPersona!);
+
+            if (persona is null)
+            {
+                return new JsonResult(new { success = false, message = "Error al borrar el empleado" });
+            }
+
+            // En caso se encuentre el registro
+            _unidadTrabajo.Empleado.Remover(registro);
+
+            // Borramos la persona asociada al empleado
+            _unidadTrabajo.Persona.Remover(persona);
+
+            // Guardar los cambios
+            await _unidadTrabajo.GuardarCambios();
+
+            // Enviamos el mensaje de éxito
+            return new JsonResult(new { success = true, message = "Empleado eliminado exitosamente" });
+        }
         #endregion
     }
 }

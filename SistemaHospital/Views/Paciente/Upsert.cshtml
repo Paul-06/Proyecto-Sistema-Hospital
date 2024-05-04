@@ -1,1 +1,130 @@
-﻿
+﻿@model SistemaHospital.Models.ViewModels.PacienteVm
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Agregar paciente";
+}
+
+<form method="POST" asp-action="Upsert">
+    <div style="padding-left: 15%; padding-right: 15%; padding-bottom: 4rem;">
+        <div class="row border-0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+
+        @if (Model.Id != 0)
+        {
+            // Actualizar paciente
+            titulo = "Actualizar paciente";
+            <input type="hidden" asp-for="Id" id="id" />
+        }
+
+        <input type="hidden" asp-for="IdPersona" id="idPersona" />
+
+        <div class="col-12 border-bottom p-0" style="margin-bottom: 5px;">
+            <h2 class="text-primary">@titulo</h2>
+        </div>
+
+        <div class="row">
+            <!-- Primera columna -->
+            <div class="col-md-6">
+                @* Input DNI *@
+                <div class="form-group mb-2">
+                    <label class="form-label">DNI</label>
+                    <input type="text" asp-for="Dni" class="form-control" id="dni" />
+                    <span asp-validation-for="Dni" class="text-danger"></span>
+                </div>
+
+                @* Input Apellido Paterno *@
+                <div class="form-group mb-2">
+                    <label class="form-label">Apellido Paterno</label>
+                    <input type="text" asp-for="ApellidoPaterno" class="form-control" id="apellidoPaterno" />
+                    <span asp-validation-for="ApellidoPaterno" class="text-danger"></span>
+                </div>
+
+                @* Input Apellido Materno *@
+                <div class="form-group mb-2">
+                    <label class="form-label">Apellido Materno</label>
+                    <input type="text" asp-for="ApellidoMaterno" class="form-control" id="apellidoMaterno" />
+                    <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
+                </div>
+
+                @* Input Nombre *@
+                <div class="form-group mb-2">
+                    <label class="form-label">Nombres</label>
+                    <input type="text" asp-for="Nombres" class="form-control" id="nombres" />
+                    <span asp-validation-for="Nombres" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="col-md-6">
+                @* Input Fecha de Nacimiento *@
+                <div class="form-group mb-2">
+                    <label class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" asp-for="FechaNacimiento" class="form-control" id="fechaNacimiento" />
+                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                </div>
+
+                @* Input Celular *@
+                <div class="form-group mb-2">
+                    <label class="form-label">Celular</label>
+                    <input type="tel" asp-for="Celular" class="form-control" id="celular" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+
+                @* Input Correo *@
+                <div class="form-group mb-2">
+                    <label class="form-label">Correo</label>
+                    <input type="email" asp-for="Correo" class="form-control" id="correo" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+
+                @* Input Dirección *@
+                <div class="form-group mb-2">
+                    <label class="form-label">Dirección</label>
+                    <input type="text" asp-for="Direccion" class="form-control" id="direccion" />
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div>
+            @if (Model.Id != 0)
+            {
+                <partial name="_BotonesActualizarYRegresar" model="Model.Id" />
+            }
+            else
+            {
+                <partial name="_BotonesCrearYRegresar" />
+            }
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.getElementById('dni').addEventListener('change', function () {
+            validarDni();
+        });
+
+        function validarDni() {
+            var url = '@Url.Content("~/")' + 'Persona/ValidarDni';
+            var id = '#idPersona';
+            var dni = '#dni';
+
+            $.getJSON(url, { id: $(id).val(), dni: $(dni).val() }, function (data) {
+                $.each(data, function (key, value) {
+                    if (value) {
+                        var txt_dni = document.getElementById('dni');
+                        swal("Error", `El DNI "${txt_dni.value}" ya existe en la base de datos.`, "error");
+                        txt_dni.value = "";
+                    }
+                });
+            });
+        }
+    </script>
+}

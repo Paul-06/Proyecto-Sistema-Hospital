@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DCfiZjSJA+FSx1+fJ9r2hKnAF/jTvE+BGBt9QkaKoRg=",
+  "Hash": "ewbLLtl6NnODMqQIOs7LztzNpk8iNds07wL8q7QGC1s=",
   "Source": "SistemaHospital",
   "BasePath": "_content/SistemaHospital",
   "Mode": "Default",
@@ -112,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\js\\cargo.js"
     },
     {
+      "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\empleado.js",
+      "SourceId": "SistemaHospital",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\",
+      "BasePath": "_content/SistemaHospital",
+      "RelativePath": "js/empleado.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\empleado.js"
+    },
+    {
       "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\especialidad.js",
       "SourceId": "SistemaHospital",
       "SourceType": "Discovered",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\especialidad.js"
+    },
+    {
+      "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\paciente.js",
+      "SourceId": "SistemaHospital",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\",
+      "BasePath": "_content/SistemaHospital",
+      "RelativePath": "js/paciente.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\paciente.js"
     },
     {
       "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\site.js",

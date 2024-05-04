@@ -1,1 +1,40 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <h2 class="text-primary">Lista de Empleados</h2>
+    </div>
+    <div class="col-lg-6">
+        <a class="btn btn-outline-primary" asp-action="Upsert">
+            <i class="fa-solid fa-square-plus"></i>
+            Agregar empleado
+        </a>
+    </div>
+</div>
+
+<br />
+
+<div class="p-4 border rounded bg-light">
+    <table id="tblEmpleados" class="table table-responsive table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>DNI</th>
+                <th>Nombre Completo</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th>Dirección</th>
+                <th>Especialidad</th>
+                <th>Tipo de Empleado</th>
+                <th>Cargo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="~/js/empleado.js"></script>
+}

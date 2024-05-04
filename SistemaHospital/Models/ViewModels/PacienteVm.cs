@@ -1,9 +1,8 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SistemaHospital.Models.ViewModels
 {
-    public class EmpleadoVm
+    public class PacienteVm
     {
         public int Id { get; set; }
 
@@ -38,20 +37,5 @@ namespace SistemaHospital.Models.ViewModels
         public string? Direccion { get; set; }
 
         public int? IdPersona { get; set; }
-
-        [Required(ErrorMessage = "El cargo es requerido")]
-        public int? IdCargo { get; set; }
-
-        [Required(ErrorMessage = "La especialidad es requerida")]
-        public int? IdEspecialidad { get; set; }
-
-        [Required(ErrorMessage = "El tipo de empleado es requerido")]
-        public int? IdTipoEmpleado { get; set; }
-
-        public IEnumerable<SelectListItem>? CargoLista { get; set; }
-
-        public IEnumerable<SelectListItem>? TipoEmpleadoLista { get; set; }
-
-        public IEnumerable<SelectListItem>? EspecialidadLista { get; set; }
     }
 }
