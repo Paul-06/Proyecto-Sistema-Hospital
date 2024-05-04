@@ -12,18 +12,6 @@ namespace SistemaHospital.Repository.Implementation
         public PacienteRepositorio(BdHospitalContext context) : base(context) // Enviar el context al padre (Repositorio)
         {
             _context = context;
-        }
-
-        public void Actualizar(Paciente paciente)
-        {
-            var registro = _context.Pacientes.FirstOrDefault(p => p.IdPaciente == paciente.IdPaciente); // Buscar el registro a actualizar
-
-            if (registro != null) // Si se encontró el registro
-            {
-                registro.IdPersona = paciente.IdPersona;
-
-                _context.SaveChanges();
-            }
-        }   
+        } 
     }
 }
