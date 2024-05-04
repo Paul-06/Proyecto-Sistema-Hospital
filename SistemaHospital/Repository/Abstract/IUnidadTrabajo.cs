@@ -9,6 +9,8 @@
         IPacienteRepositorio Paciente { get; }
         ITipoExamenRepositorio TipoExamen { get; }
         ITipoTratamientoRepositorio TipoTratamiento { get; }
+        IPersonaRepositorio Persona { get; }
+        IEmpleadoRepositorio Empleado { get; }
         Task GuardarCambios();
     }
 }
