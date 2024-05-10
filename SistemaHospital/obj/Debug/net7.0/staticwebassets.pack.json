@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\img\\logo_hospital.png",
+      "PackagePath": "staticwebassets\\img\\logo_hospital.png"
+    },
+    {
       "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\cargo.js",
       "PackagePath": "staticwebassets\\js\\cargo.js"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\especialidad.js",
       "PackagePath": "staticwebassets\\js\\especialidad.js"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\h_medico.js",
+      "PackagePath": "staticwebassets\\js\\h_medico.js"
     },
     {
       "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\paciente.js",

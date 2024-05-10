@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Historiales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <h2 class="text-primary">Lista de Historiales Médicos</h2>
+    </div>
+</div>
+
+<br />
+
+<div class="p-4 border rounded bg-light">
+    <table id="tblHistoriales" class="table table-responsive table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>N° H. Médico</th>
+                <th>Paciente</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Cant. Exámenes</th>
+                <th>Cant. Tratamientos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="~/js/h_medico.js"></script>
+}

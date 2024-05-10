@@ -1,0 +1,133 @@
+﻿@model SistemaHospital.Dtos.HMedicoDto
+@{
+    ViewData["Title"] = "Detalles H.M.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-3">
+    <h2 class="text-center">Nro del Historial Médico: @Model.IdHMedico</h2>
+
+    <div class="row">
+        <h3>Datos del Paciente</h3>
+
+        <div class="col-md-6">
+            <p><strong>Nombre Completo:</strong> @Model.Paciente.NombreCompleto</p>
+            <p><strong>DNI:</strong> @Model.Paciente.Dni</p>
+            <p><strong>Fecha de Nacimiento:</strong> @Model.Paciente.FechaNacimiento (@Model.Paciente.Edad)</p>
+        </div>
+        <div class="col-md-6">
+            <p><strong>Celular:</strong> @Model.Paciente.Celular</p>
+            <p><strong>Correo:</strong> @Model.Paciente.Correo</p>
+            <p><strong>Dirección:</strong> @Model.Paciente.Direccion</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">Exámenes</h3>
+            @{
+                int i = 0;
+                if (Model.Examenes.Count <= 0)
+                {
+                    <p>Sin exámenes.</p>
+                }
+                else
+                {
+                    foreach (var examen in Model.Examenes)
+                    {
+                        i++;
+                        string idExamen = "collapseE" + i;
+                        <div class="accordion" id="accordionExamen">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#@idExamen" aria-expanded="false" aria-controls="@idExamen">
+                                        Exámen N° @i
+                                    </button>
+                                </h2>
+                                <div id="@idExamen" class="accordion-collapse collapse" data-bs-parent="#accordionExamen">
+                                    <div class="accordion-body">
+                                        <p><strong>Tipo de Examen:</strong> @examen.TipoExamen</p>
+                                        <p><strong>Fecha de Solicitud:</strong> @examen.FechaSolicitud</p>
+                                        <p><strong>Fecha de Aplicación:</strong> @examen.FechaAplicacion</p>
+                                        <p><strong>Observaciones:</strong> @examen.Observaciones</p>
+                                        <h5>Resultados</h5>
+                                        @{
+                                            int j = 0;
+                                            if (examen.Resultados.Count <= 0)
+                                            {
+                                                <p>Sin resultados.</p>
+                                            }
+                                            else
+                                            {
+                                                foreach (var resultado in examen.Resultados)
+                                                {
+                                                    j++;
+                                                    string idResultado = "collapseR" + j;
+                                                    <div class="accordion" id="accordionResult">
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#@idResultado" aria-expanded="false"
+                                                                    aria-controls="@idResultado">
+                                                                    Resultado N° @j
+                                                                </button>
+                                                            </h2>
+                                                            <div id="@idResultado" class="accordion-collapse collapse"
+                                                                data-bs-parent="#accordionResult">
+                                                                <div class="accordion-body">
+                                                                    <p><strong>Fecha de Entrega:</strong> @resultado.FechaEntrega</p>
+                                                                    <p><strong>Descripción:</strong> @resultado.Descripcion</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Tratamientos</h3>
+            @{
+                int k = 0;
+                if (Model.Tratamientos.Count <= 0)
+                {
+                    <p>Sin tratamientos.</p>
+                }
+                else
+                {
+                    foreach (var tratamiento in Model.Tratamientos)
+                    {
+                        k++;
+                        string idTratamiento = "collapseT" + k;
+                        <div class="accordion" id="accordionTreatment">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#@idTratamiento" aria-expanded="false" aria-controls="@idTratamiento">
+                                        Tratamiento N° @k
+                                    </button>
+                                </h2>
+                                <div id="@idTratamiento" class="accordion-collapse collapse" data-bs-parent="#accordionTreatment">
+                                    <div class="accordion-body">
+                                        <p><strong>Tipo de Tratamiento:</strong> @tratamiento.TipoTratamiento</p>
+                                        <p><strong>Fecha de Inicio:</strong> @tratamiento.FechaInicio</p>
+                                        <p><strong>Fecha de Finalización:</strong> @tratamiento.FechaFin</p>
+                                        <p><strong>Observaciones:</strong> @tratamiento.Observaciones</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>
