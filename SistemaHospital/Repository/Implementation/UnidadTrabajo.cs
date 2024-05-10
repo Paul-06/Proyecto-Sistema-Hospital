@@ -19,6 +19,9 @@ namespace SistemaHospital.Repository.Implementation
         public IPersonaRepositorio Persona { get; private set; }
         public IEmpleadoRepositorio Empleado { get; private set; }
         public IHistorialMedicoRepositorio HistorialMedico { get; private set; }
+        public IExamenRepositorio Examen { get; private set; }
+        public ITratamientoRepositorio Tratamiento { get; private set; }
+        public IResultadoRepositorio Resultado { get; private set; }
 
         // Hacemos la inyección en el  constructor
         public UnidadTrabajo(BdHospitalContext context)
@@ -37,6 +40,9 @@ namespace SistemaHospital.Repository.Implementation
             Persona = new PersonaRepositorio(_context);
             Empleado = new EmpleadoRepositorio(_context);
             HistorialMedico = new HistorialMedicoRepositorio(_context);
+            Examen = new ExamenRepositorio(_context);
+            Tratamiento = new TratamientoRepositorio(_context);
+            Resultado = new ResultadoRepositorio(_context);
         }
 
         public void Dispose()

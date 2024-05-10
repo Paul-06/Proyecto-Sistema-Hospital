@@ -42,6 +42,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXFVwc2VydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/HMedico/DetalleHMedico.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSE1lZGljb1xEZXRhbGxlSE1lZGljby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/HMedico/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSE1lZGljb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Programming/CSharp/SistemaHospital/SistemaHospital/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

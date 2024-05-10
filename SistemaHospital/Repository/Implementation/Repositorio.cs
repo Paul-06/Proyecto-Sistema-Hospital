@@ -27,7 +27,7 @@ namespace SistemaHospital.Repository.Implementation
             return entidad ?? throw new KeyNotFoundException($"No se encontró una entidad con ID {id}"); // Aplicación de operador de coalescencia
         }
 
-        public async Task<T> ObtenerPrimero(Expression<Func<T, bool>>? filtro = null, string? incluirPropiedades = null, bool isTracking = true)
+        public async Task<T> ObtenerPrimero(Expression<Func<T, bool>>? filtro, string? incluirPropiedades, bool isTracking)
         {
             IQueryable<T> query = dbSet;
             if (filtro != null)
@@ -39,7 +39,7 @@ namespace SistemaHospital.Repository.Implementation
             {
                 foreach (var item in incluirPropiedades.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    query = query.Include(item); // Obtener propiedades que vengan de otras tablas relacionadas
+                    query = query.Include(item.Trim()); // Obtener propiedades que vengan de otras tablas relacionadas
                 }
             }
 
@@ -48,9 +48,7 @@ namespace SistemaHospital.Repository.Implementation
                 query = query.AsNoTracking();
             }
 
-            T result = await query.FirstOrDefaultAsync() ?? throw new InvalidOperationException("No se encontró el elemento buscado");
-            
-            return result;
+            return await query.FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<T>> ObtenerTodos(Expression<Func<T, bool>>? filtro = null, Func<IQueryable<T>, IOrderedQueryable<T>>? ordenarPor = null, string? incluirPropiedades = null, bool isTracking = true)
@@ -65,7 +63,7 @@ namespace SistemaHospital.Repository.Implementation
             {
                 foreach (var item in incluirPropiedades.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    query = query.Include(item); // Obtener propiedades que vengan de otras tablas relacionadas
+                    query = query.Include(item.Trim()); // Obtener propiedades que vengan de otras tablas relacionadas
                 }
             }
 
