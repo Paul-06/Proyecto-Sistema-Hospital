@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\js\\hMedico.js"
     },
     {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\home.js",
+      "PackagePath": "staticwebassets\\js\\home.js"
+    },
+    {
       "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\paciente.js",
       "PackagePath": "staticwebassets\\js\\paciente.js"
     },

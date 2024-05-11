@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YNJkFO2dffq3bqChbiK+Aud7Gbbjt9aaw53OMpr4OAU=",
+  "Hash": "TAIPJiTn7ydiovwoJ35piERbp+fWqJyP02yGfbtMQzg=",
   "Source": "SistemaHospital",
   "BasePath": "_content/SistemaHospital",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\hMedico.js"
+    },
+    {
+      "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\home.js",
+      "SourceId": "SistemaHospital",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\",
+      "BasePath": "_content/SistemaHospital",
+      "RelativePath": "js/home.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\home.js"
     },
     {
       "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\paciente.js",

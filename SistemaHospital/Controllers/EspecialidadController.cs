@@ -45,6 +45,21 @@ namespace SistemaHospital.Controllers
 
         #region API
         [HttpGet]
+        public async Task<JsonResult> ObtenerNroEmpleadosxEspecialidad()
+        {
+            var resultado = await _unidadTrabajo.Especialidad.ObtenerTodos(
+                incluirPropiedades: "Empleados"
+            );
+
+            var especialidades = resultado.Select(e => new{
+                Especialidad = e.Nombre,
+                NroEmpleados = e.Empleados.Count
+            }).Where(e => e.NroEmpleados > 0);
+
+            return new JsonResult(new { data = especialidades });
+        }
+
+        [HttpGet]
         public async Task<JsonResult> ListarEspecialidades()
         {
             var especialidades = await _unidadTrabajo.Especialidad.ObtenerTodos();
