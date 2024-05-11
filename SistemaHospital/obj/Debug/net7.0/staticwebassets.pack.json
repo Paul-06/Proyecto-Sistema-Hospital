@@ -29,8 +29,12 @@
       "PackagePath": "staticwebassets\\js\\especialidad.js"
     },
     {
-      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\h_medico.js",
-      "PackagePath": "staticwebassets\\js\\h_medico.js"
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\hMedico.js",
+      "PackagePath": "staticwebassets\\js\\hMedico.js"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\home.js",
+      "PackagePath": "staticwebassets\\js\\home.js"
     },
     {
       "Id": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\paciente.js",

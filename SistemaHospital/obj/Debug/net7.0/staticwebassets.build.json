@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "69N8bt/osrgjlrVFqfizvH5mmqeaNvWJ6/NOchefkVA=",
+  "Hash": "TAIPJiTn7ydiovwoJ35piERbp+fWqJyP02yGfbtMQzg=",
   "Source": "SistemaHospital",
   "BasePath": "_content/SistemaHospital",
   "Mode": "Default",
@@ -169,12 +169,12 @@
       "OriginalItemSpec": "wwwroot\\js\\especialidad.js"
     },
     {
-      "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\h_medico.js",
+      "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\hMedico.js",
       "SourceId": "SistemaHospital",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\",
       "BasePath": "_content/SistemaHospital",
-      "RelativePath": "js/h_medico.js",
+      "RelativePath": "js/hMedico.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,7 +185,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\h_medico.js"
+      "OriginalItemSpec": "wwwroot\\js\\hMedico.js"
+    },
+    {
+      "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\home.js",
+      "SourceId": "SistemaHospital",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\",
+      "BasePath": "_content/SistemaHospital",
+      "RelativePath": "js/home.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\home.js"
     },
     {
       "Identity": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\wwwroot\\js\\paciente.js",

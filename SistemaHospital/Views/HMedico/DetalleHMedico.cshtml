@@ -7,8 +7,10 @@
 <div class="container mt-3">
     <h2 class="text-center">Nro del Historial Médico: @Model.IdHMedico</h2>
 
+    <br />
+
     <div class="row">
-        <h3>Datos del Paciente</h3>
+        <h3 style="margin-bottom: 15px;">Datos del Paciente</h3>
 
         <div class="col-md-6">
             <p><strong>Nombre Completo:</strong> @Model.Paciente.NombreCompleto</p>
@@ -21,6 +23,8 @@
             <p><strong>Dirección:</strong> @Model.Paciente.Direccion</p>
         </div>
     </div>
+
+    <br />
 
     <div class="row">
         <div class="col-md-6">
@@ -68,8 +72,8 @@
                                                         <div class="accordion-item">
                                                             <h2 class="accordion-header">
                                                                 <button class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse" data-bs-target="#@idResultado" aria-expanded="false"
-                                                                    aria-controls="@idResultado">
+                                                                    data-bs-toggle="collapse" data-bs-target="#@idResultado"
+                                                                    aria-expanded="false" aria-controls="@idResultado">
                                                                     Resultado N° @j
                                                                 </button>
                                                             </h2>
@@ -130,4 +134,9 @@
             }
         </div>
     </div>
+    <br />
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-left"></i>
+        Regresar
+    </a>
 </div>
