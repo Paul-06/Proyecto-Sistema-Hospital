@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,17 +10,63 @@
     <link rel="stylesheet" href="~/SistemaHospital.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <style>
+        .btn-outline-primary {
+            color: #007a78;
+            border-color: #007a78;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007a78;
+            border-color: #007a78;
+        }
+
+        .btn-primary {
+            background-color: #007a78;
+            border-color: #007a78;
+        }
+
+        .btn-primary:hover {
+            background-color: #065b59;
+            border-color: #065b59;
+        }
+
+        .dropdown-item:active {
+            background-color: #065b59;
+        }
+
+        .text-primary {
+            color: #007A78 !important;
+        }
+
+        /* Cambiar el color de foco de los botones */
+        .btn:focus,
+        .btn.focus,
+        .btn:active:focus,
+        .btn.active:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 122, 120, 0.5);
+        }
+
+        /* Cambiar el color de foco de los campos de entrada */
+        .form-control:focus {
+            border-color: #007a78;
+            box-shadow: 0 0 0 0.2rem rgba(0, 122, 120, 0.5);
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <nav style="background-color: #007A78" class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+        <nav style="background-color: #007A78"
+            class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" style="display: flex; flex-direction: row; align-items: center; gap: 6px;" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand" style="display: flex; flex-direction: row; align-items: center; gap: 6px;"
+                    asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/img/logo_hospital.png" alt="Logo" class="img-fluid" style="width: 2rem;">
                     <p class="text-white" style="margin: 0 !important;">VitaliaCare</p>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa-solid fa-bars text-white"></i>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -28,25 +75,36 @@
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home"
+                                asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-white dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Mantenimiento
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Empleado" asp-action="Index">Empleados</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Paciente" asp-action="Index">Pacientes</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Cargo" asp-action="Index">Cargos</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Especialidad" asp-action="Index">Especialidades</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoEmpleado" asp-action="Index">Tipos de empleado</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoPago" asp-action="Index">Tipos de pago</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoExamen" asp-action="Index">Tipos de examen</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoTratamiento" asp-action="Index">Tipos de tratamiento</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Empleado"
+                                        asp-action="Index">Empleados</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Paciente"
+                                        asp-action="Index">Pacientes</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Cargo"
+                                        asp-action="Index">Cargos</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Especialidad"
+                                        asp-action="Index">Especialidades</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoEmpleado"
+                                        asp-action="Index">Tipos de empleado</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoPago"
+                                        asp-action="Index">Tipos de pago</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoExamen"
+                                        asp-action="Index">Tipos de examen</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoTratamiento"
+                                        asp-action="Index">Tipos de tratamiento</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="HMedico" asp-action="Index">Historial Médico</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="HMedico"
+                                asp-action="Index">Historial Médico</a>
                         </li>
                     </ul>
                 </div>
@@ -75,4 +133,5 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
