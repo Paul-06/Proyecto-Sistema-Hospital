@@ -11,7 +11,6 @@ function obtenerDatosGraficoEspecialidad() {
     dataType: "json",
     success: function (data) {
       if (data.data != null) {
-        console.log(data.data);
         crearGraficoEspecialidad(data.data);
       }
     },
@@ -67,7 +66,6 @@ function obtenerDatosGraficoPaciente() {
     dataType: "json",
     success: function (data) {
       if (data.data != null) {
-        console.log(data.data);
         crearGraficoPaciente(data.data);
       }
     },
