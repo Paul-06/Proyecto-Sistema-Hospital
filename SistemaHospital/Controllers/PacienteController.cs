@@ -65,11 +65,44 @@ namespace SistemaHospital.Controllers
 
         #region API
         [HttpGet]
+        public async Task<JsonResult> ObtenerDistribucionxGrupoEtario()
+        {
+            var pacientes = await _unidadTrabajo.Paciente.ObtenerTodos(
+                incluirPropiedades: "IdPersonaNavigation"
+            );
+
+            // CalculateAge() es un método definido en Entity Extensions
+            var resultado = pacientes
+                .Select(p =>
+                {
+                    var edadCompleta = p.IdPersonaNavigation!.FechaNacimiento!.Value.CalculateAge();
+                    var edadAnios = int.Parse(edadCompleta.Split(' ')[0]);
+                    return edadAnios;
+                })
+                .GroupBy(age =>
+                {
+                    if (age < 18)
+                        return "Menores (<18)";
+                    else if (age >= 18 && age <= 35)
+                        return "Jóvenes (18-35)";
+                    else if (age >= 36 && age <= 60)
+                        return "Adultos (36-60)";
+                    else
+                        return "Mayores (>60)";
+                })
+                .Select(g => new {
+                    GrupoEdad = g.Key,
+                    NroPacientes = g.Count()
+                });
+
+                return new JsonResult(new { data = resultado });
+        }
+
+        [HttpGet]
         public async Task<JsonResult> ListarPacientes()
         {
             var pacientes = await _unidadTrabajo.Paciente.ObtenerTodos(
-                null, null,
-                "IdPersonaNavigation"
+                incluirPropiedades: "IdPersonaNavigation"
             );
 
             var pacienteLista = pacientes.Select(p => p.ToDto());
@@ -84,7 +117,8 @@ namespace SistemaHospital.Controllers
             {
                 if (pacienteVm.Id == 0) // Significa un nuevo registro
                 {
-                    var persona = new Persona{
+                    var persona = new Persona
+                    {
                         Dni = pacienteVm.Dni,
                         ApellidoPaterno = pacienteVm.ApellidoPaterno,
                         ApellidoMaterno = pacienteVm.ApellidoMaterno,
@@ -98,14 +132,16 @@ namespace SistemaHospital.Controllers
                     await _unidadTrabajo.Persona.Agregar(persona);
                     await _unidadTrabajo.GuardarCambios();
 
-                    var paciente = new Paciente{
+                    var paciente = new Paciente
+                    {
                         IdPersona = persona.IdPersona // Al ejecutar SaveChanges(), se actualiza (recupera) el Id del objeto
                     };
 
                     await _unidadTrabajo.Paciente.Agregar(paciente);
                     await _unidadTrabajo.GuardarCambios();
 
-                    var historialMedico = new HistorialMedico{
+                    var historialMedico = new HistorialMedico
+                    {
                         IdPaciente = paciente.IdPaciente // Al ejecutar SaveChanges(), se actualiza (recupera) el Id del objeto
                     };
 
@@ -114,7 +150,8 @@ namespace SistemaHospital.Controllers
                 }
                 else
                 {
-                    var persona = new Persona{
+                    var persona = new Persona
+                    {
                         IdPersona = (int)pacienteVm.IdPersona!,
                         Dni = pacienteVm.Dni,
                         ApellidoPaterno = pacienteVm.ApellidoPaterno,
@@ -160,7 +197,7 @@ namespace SistemaHospital.Controllers
             }
 
             var historialMedico = await _unidadTrabajo.HistorialMedico.ObtenerPrimero(hm => hm.IdPaciente == paciente.IdPaciente);
-            
+
             if (historialMedico is null)
             {
                 return new JsonResult(new { success = false, message = "Error al borrar el paciente" });
