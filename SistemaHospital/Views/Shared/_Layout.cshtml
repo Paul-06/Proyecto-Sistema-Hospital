@@ -52,6 +52,27 @@
             border-color: #007a78;
             box-shadow: 0 0 0 0.2rem rgba(0, 122, 120, 0.5);
         }
+
+        /* Para los graficos */
+        .graphics-container-main {
+            display: grid;
+            grid-template-columns:
+            repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .graphic-container {
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #007A78;
+        }
+
+        .graphic-container h2 {
+            text-align: center;
+            color: #007A78;
+            margin-bottom: 1.25rem;
+        }
     </style>
 </head>
 
