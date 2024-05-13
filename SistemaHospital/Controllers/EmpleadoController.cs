@@ -133,6 +133,7 @@ namespace SistemaHospital.Controllers
                     _unidadTrabajo.Persona.Actualizar(persona);
 
                     var empleado = new Empleado{
+                        IdEmpleado = empleadoVm.Id,
                         IdTipoEmpleado = empleadoVm.IdTipoEmpleado,
                         IdEspecialidad = empleadoVm.IdEspecialidad,
                         IdCargo = empleadoVm.IdCargo
