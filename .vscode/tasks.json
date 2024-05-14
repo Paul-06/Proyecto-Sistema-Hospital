@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Execute project",
+            "type": "shell",
+            "command": "dotnet run --project SistemaHospital",
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        }
+    ]
+}
