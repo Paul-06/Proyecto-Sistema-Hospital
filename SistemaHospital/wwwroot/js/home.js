@@ -1,48 +1,40 @@
 $(function () {
-  obtenerDatosGraficoEspecialidad();
-  obtenerDatosGraficoPaciente();
+  fetchDataAndCreateChart("/Especialidad/ObtenerNroEmpleadosxEspecialidad", crearGraficoEspecialidad);
+  fetchDataAndCreateChart("/Paciente/ObtenerDistribucionxGrupoEtario", crearGraficoPaciente);
   console.log("Hola :D");
 });
 
-function obtenerDatosGraficoEspecialidad() {
+function fetchDataAndCreateChart(url, createChartCallback) {
   $.ajax({
-    url: "/Especialidad/ObtenerNroEmpleadosxEspecialidad",
+    url: url,
     type: "GET",
     dataType: "json",
     success: function (data) {
       if (data.data != null) {
-        crearGraficoEspecialidad(data.data);
+        createChartCallback(data.data);
       }
     },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.error(`Error fetching data from ${url}:`, textStatus, errorThrown);
+    }
   });
 }
 
 function crearGraficoEspecialidad(json) {
-  const especialidades = json.map((e) => e.especialidad);
-  const nroEmpleados = json.map((e) => e.nroEmpleados);
-  const backgroundColors = [];
-  const borderColors = [];
-
-  // Generar colores para el fondo y los bordes
-  for (let i = 0; i < json.length; i++) {
-    const colorBase = `${getRandomColor(255, 0)}, ${getRandomColor(
-      255,
-      0
-    )}, ${getRandomColor(255, 0)}`;
-    backgroundColors.push(`rgba(${colorBase}, 0.5)`);
-    borderColors.push(`rgb(${colorBase})`);
-  }
+  const labels = json.map((e) => e.especialidad);
+  const data = json.map((e) => e.nroEmpleados);
+  const { backgroundColors, borderColors } = generateColors(json.length);
 
   const ctx1 = document.getElementById("graficoEspecialidad");
 
   new Chart(ctx1, {
     type: "bar",
     data: {
-      labels: especialidades,
+      labels: labels,
       datasets: [
         {
           label: "# de Empleados",
-          data: nroEmpleados,
+          data: data,
           backgroundColor: backgroundColors,
           borderColor: borderColors,
           borderWidth: 1,
@@ -59,61 +51,41 @@ function crearGraficoEspecialidad(json) {
   });
 }
 
-function obtenerDatosGraficoPaciente() {
-  $.ajax({
-    url: "/Paciente/ObtenerDistribucionxGrupoEtario",
-    type: "GET",
-    dataType: "json",
-    success: function (data) {
-      if (data.data != null) {
-        crearGraficoPaciente(data.data);
-      }
-    },
-  });
-}
-
 function crearGraficoPaciente(json) {
-  const grupoEdad = json.map((e) => e.grupoEdad);
-  const nroPacientes = json.map((e) => e.nroPacientes);
-  const backgroundColors = [];
-  const borderColors = [];
-
-  // Generar colores para el fondo y los bordes
-  for (let i = 0; i < json.length; i++) {
-    const colorBase = `${getRandomColor(255, 0)}, ${getRandomColor(
-      255,
-      0
-    )}, ${getRandomColor(255, 0)}`;
-    backgroundColors.push(`rgba(${colorBase}, 0.5)`);
-    borderColors.push(`rgb(${colorBase})`);
-  }
+  const labels = json.map((e) => e.grupoEdad);
+  const data = json.map((e) => e.nroPacientes);
+  const { backgroundColors, borderColors } = generateColors(json.length);
 
   const ctx2 = document.getElementById("graficoPaciente");
 
   new Chart(ctx2, {
     type: "pie",
     data: {
-      labels: grupoEdad,
+      labels: labels,
       datasets: [
         {
           label: "# de Pacientes",
-          data: nroPacientes,
+          data: data,
           backgroundColor: backgroundColors,
           borderColor: borderColors,
           borderWidth: 1,
         },
       ],
     },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
   });
 }
 
+function generateColors(count) {
+  const backgroundColors = [];
+  const borderColors = [];
+  for (let i = 0; i < count; i++) {
+    const colorBase = `${getRandomColor(255, 0)}, ${getRandomColor(255, 0)}, ${getRandomColor(255, 0)}`;
+    backgroundColors.push(`rgba(${colorBase}, 0.5)`);
+    borderColors.push(`rgb(${colorBase})`);
+  }
+  return { backgroundColors, borderColors };
+}
+
 function getRandomColor(max, min) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 }
