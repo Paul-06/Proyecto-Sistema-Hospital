@@ -1,7 +1,7 @@
 
 # Proyecto Sistema Hospital
 
-Sistema web en desarrollo para un hospital.
+VitaliaCare es un sistema web en desarrollo para un hospital.
 
 ## Descripción
 
