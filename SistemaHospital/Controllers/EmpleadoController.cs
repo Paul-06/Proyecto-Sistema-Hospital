@@ -76,8 +76,7 @@ namespace SistemaHospital.Controllers
         public async Task<JsonResult> ListarEmpleados()
         {
             var empleados = await _unidadTrabajo.Empleado.ObtenerTodos(
-                null, null,
-                "IdPersonaNavigation,IdCargoNavigation,IdEspecialidadNavigation,IdTipoEmpleadoNavigation"
+                incluirPropiedades: "IdPersonaNavigation, IdCargoNavigation, IdEspecialidadNavigation, IdTipoEmpleadoNavigation"
             );
 
             var empleadoLista = empleados.Select(e => e.ToDto());
@@ -88,101 +87,144 @@ namespace SistemaHospital.Controllers
         [ValidateAntiForgeryToken] // Sirve para evitar solicitudes externas
         public async Task<IActionResult> Upsert(EmpleadoVm empleadoVm)
         {
-            if (ModelState.IsValid) // Si el modelo es válido
+            if (!ModelState.IsValid)
             {
-                if (empleadoVm.Id == 0) // Significa un nuevo registro
+                TempData[DS.Error] = "Error al guardar los cambios";
+                return View(empleadoVm);
+            }
+
+            using var transaccion = _unidadTrabajo.IniciarTransaccion();
+            try
+            {
+                if (empleadoVm.Id == 0) // Se trata de una insercion
                 {
-                    var persona = new Persona{
-                        Dni = empleadoVm.Dni,
-                        ApellidoPaterno = empleadoVm.ApellidoPaterno,
-                        ApellidoMaterno = empleadoVm.ApellidoMaterno,
-                        Nombres = empleadoVm.Nombres,
-                        FechaNacimiento = empleadoVm.FechaNacimiento,
-                        Celular = empleadoVm.Celular,
-                        Correo = empleadoVm.Correo,
-                        Direccion = empleadoVm.Direccion
-                    };
-
-                    await _unidadTrabajo.Persona.Agregar(persona);
-                    await _unidadTrabajo.GuardarCambios();
-
-                    var empleado = new Empleado{
-                        IdPersona = persona.IdPersona, // Al ejecutar SaveChanges(), se recupera el Id del objeto
-                        IdTipoEmpleado = empleadoVm.IdTipoEmpleado,
-                        IdEspecialidad = empleadoVm.IdEspecialidad,
-                        IdCargo = empleadoVm.IdCargo
-                    };
-
-                    await _unidadTrabajo.Empleado.Agregar(empleado);
-                    TempData[DS.Exitosa] = "Empleado agregado exitosamente"; // Será usado para las notificaciones
+                    await AgregarEmpleado(empleadoVm);
+                    TempData[DS.Exitosa] = "Empleado agregado exitosamente";
                 }
                 else
                 {
-                    var persona = new Persona{
-                        IdPersona = (int)empleadoVm.IdPersona!,
-                        Dni = empleadoVm.Dni,
-                        ApellidoPaterno = empleadoVm.ApellidoPaterno,
-                        ApellidoMaterno = empleadoVm.ApellidoMaterno,
-                        Nombres = empleadoVm.Nombres,
-                        FechaNacimiento = empleadoVm.FechaNacimiento,
-                        Celular = empleadoVm.Celular,
-                        Correo = empleadoVm.Correo,
-                        Direccion = empleadoVm.Direccion
-                    };
-
-                    _unidadTrabajo.Persona.Actualizar(persona);
-
-                    var empleado = new Empleado{
-                        IdEmpleado = empleadoVm.Id,
-                        IdTipoEmpleado = empleadoVm.IdTipoEmpleado,
-                        IdEspecialidad = empleadoVm.IdEspecialidad,
-                        IdCargo = empleadoVm.IdCargo
-                    };
-
-                    _unidadTrabajo.Empleado.Actualizar(empleado);
-
-                    TempData[DS.Exitosa] = "Empleado actualizado exitosamente"; // Será usado para las notificaciones
+                    ActualizarEmpleado(empleadoVm);
+                    TempData[DS.Exitosa] = "Empleado actualizado exitosamente";
                 }
 
-                await _unidadTrabajo.GuardarCambios(); // Guardar los cambios en la base de datos
+                await _unidadTrabajo.GuardarCambios();
+                transaccion.Commit();
 
-                return RedirectToAction(nameof(Index)); // Redirigir al Index
+                return RedirectToAction(nameof(Index));
             }
-
-            // Si no se hace nada
-            TempData[DS.Error] = "Error al guardar los cambios"; // Notificación de error
-            return View(empleadoVm);
+            catch (Exception)
+            {
+                transaccion.Rollback();
+                TempData[DS.Error] = "Error al guardar los cambios";
+                return View(empleadoVm);
+            }
         }
 
         [HttpDelete]
         public async Task<JsonResult> Eliminar(int id)
         {
-            // Buscamos el registro a eliminar
-            var registro = await _unidadTrabajo.Empleado.ObtenerPorId(id);
-
-            if (registro is null)
+            using var transaccion = _unidadTrabajo.IniciarTransaccion();
+            try
             {
+                // Buscamos el registro a eliminar
+                var registro = await _unidadTrabajo.Empleado.ObtenerPorId(id);
+
+                if (registro is null)
+                {
+                    return new JsonResult(new { success = false, message = "Error al encontrar el empleado" });
+                }
+
+                var persona = await _unidadTrabajo.Persona.ObtenerPorId((int)registro.IdPersona!);
+
+                if (persona is null)
+                {
+                    return new JsonResult(new { success = false, message = "Error al encontrar la persona" });
+                }
+
+                // En caso se encuentre el registro
+                _unidadTrabajo.Empleado.Remover(registro);
+
+                // Borramos la persona asociada al empleado
+                _unidadTrabajo.Persona.Remover(persona);
+
+                // Guardar los cambios
+                await _unidadTrabajo.GuardarCambios();
+
+                // Confirmar transacción
+                transaccion.Commit();
+
+                // Enviamos el mensaje de éxito
+                return new JsonResult(new { success = true, message = "Empleado eliminado exitosamente" });
+            }
+            catch (Exception)
+            {
+                transaccion.Rollback();
                 return new JsonResult(new { success = false, message = "Error al borrar el empleado" });
             }
 
-            var persona = await _unidadTrabajo.Persona.ObtenerPorId((int)registro.IdPersona!);
+        }
+        #endregion
 
-            if (persona is null)
+        #region METODOS PRIVADOS
+        private async Task AgregarEmpleado(EmpleadoVm empleadoVm)
+        {
+            var persona = new Persona
             {
-                return new JsonResult(new { success = false, message = "Error al borrar el empleado" });
-            }
+                Dni = empleadoVm.Dni,
+                ApellidoPaterno = empleadoVm.ApellidoPaterno,
+                ApellidoMaterno = empleadoVm.ApellidoMaterno,
+                Nombres = empleadoVm.Nombres,
+                FechaNacimiento = empleadoVm.FechaNacimiento,
+                Celular = empleadoVm.Celular,
+                Correo = empleadoVm.Correo,
+                Direccion = empleadoVm.Direccion
+            };
 
-            // En caso se encuentre el registro
-            _unidadTrabajo.Empleado.Remover(registro);
-
-            // Borramos la persona asociada al empleado
-            _unidadTrabajo.Persona.Remover(persona);
-
-            // Guardar los cambios
+            await _unidadTrabajo.Persona.Agregar(persona);
             await _unidadTrabajo.GuardarCambios();
 
-            // Enviamos el mensaje de éxito
-            return new JsonResult(new { success = true, message = "Empleado eliminado exitosamente" });
+            if (persona.IdPersona != 0)
+            {
+                throw new Exception("Error al guardar la persona en la base de datos");
+            }
+
+            var empleado = new Empleado
+            {
+                IdPersona = persona.IdPersona,
+                IdTipoEmpleado = empleadoVm.IdTipoEmpleado,
+                IdEspecialidad = empleadoVm.IdEspecialidad,
+                IdCargo = empleadoVm.IdCargo
+            };
+
+            await _unidadTrabajo.Empleado.Agregar(empleado);
+        }
+
+        private void ActualizarEmpleado(EmpleadoVm empleadoVm)
+        {
+            var persona = new Persona
+            {
+                IdPersona = (int)empleadoVm.IdPersona!,
+                Dni = empleadoVm.Dni,
+                ApellidoPaterno = empleadoVm.ApellidoPaterno,
+                ApellidoMaterno = empleadoVm.ApellidoMaterno,
+                Nombres = empleadoVm.Nombres,
+                FechaNacimiento = empleadoVm.FechaNacimiento,
+                Celular = empleadoVm.Celular,
+                Correo = empleadoVm.Correo,
+                Direccion = empleadoVm.Direccion
+            };
+
+            _unidadTrabajo.Persona.Actualizar(persona);
+
+            var empleado = new Empleado
+            {
+                IdEmpleado = empleadoVm.Id,
+                IdTipoEmpleado = empleadoVm.IdTipoEmpleado,
+                IdEspecialidad = empleadoVm.IdEspecialidad,
+                IdCargo = empleadoVm.IdCargo
+            };
+
+            _unidadTrabajo.Empleado.Actualizar(empleado);
         }
         #endregion
     }

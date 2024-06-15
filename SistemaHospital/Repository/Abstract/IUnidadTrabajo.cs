@@ -1,4 +1,6 @@
-﻿namespace SistemaHospital.Repository.Abstract
+﻿using System.Data;
+
+namespace SistemaHospital.Repository.Abstract
 {
     public interface IUnidadTrabajo : IDisposable // Para liberar recursos
     {
@@ -15,6 +17,7 @@
         IExamenRepositorio Examen { get; }
         ITratamientoRepositorio Tratamiento { get; }
         IResultadoRepositorio Resultado { get; }
+        IDbTransaction IniciarTransaccion();
         Task GuardarCambios();
     }
 }
