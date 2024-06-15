@@ -36,9 +36,7 @@ Este proyecto es un sistema web diseñado para gestionar las operaciones y datos
 2. Abre la solución `SistemaHospital.sln` con Visual Studio.
 3. Compila y ejecuta el proyecto.
 
-## Capturas
-
-### Capturas del Sistema
+## Capturas del Sistema
 
 ### Pantalla de Inicio
 ![Pantalla de Inicio](screenshots/home_page.png)
