@@ -47,15 +47,18 @@ function loadDataTable() {
 }
 
 function eliminar(url) {
-    // SweetAlert
-    swal({
-        title: "¿Está seguro de eliminar el empleado?",
+    // SweetAlert 2
+    Swal.fire({
+        title: "¿Está seguro?",
         text: "Este registro no se podrá recuperar.",
         icon: "warning",
-        buttons: ["Cancelar", "Aceptar"],
-        dangerMode: true
-    }).then((borrar) => {
-        if (borrar) {
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
             // Mediante AJAX
             $.ajax({
                 type: "DELETE",
