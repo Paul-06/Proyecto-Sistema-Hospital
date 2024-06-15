@@ -90,12 +90,13 @@ namespace SistemaHospital.Controllers
                     else
                         return "Mayores (>60)";
                 })
-                .Select(g => new {
+                .Select(g => new
+                {
                     GrupoEdad = g.Key,
                     NroPacientes = g.Count()
                 });
 
-                return new JsonResult(new { data = resultado });
+            return new JsonResult(new { data = resultado });
         }
 
         [HttpGet]
@@ -110,114 +111,159 @@ namespace SistemaHospital.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken] // Sirve para evitar solicitudes externas
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Upsert(PacienteVm pacienteVm)
         {
-            if (ModelState.IsValid) // Si el modelo es válido
+            if (!ModelState.IsValid)
             {
-                if (pacienteVm.Id == 0) // Significa un nuevo registro
+                TempData[DS.Error] = "Error al guardar los cambios";
+                return View(pacienteVm);
+            }
+
+            using var transaccion = _unidadTrabajo.IniciarTransaccion();
+            try
+            {
+                if (pacienteVm.Id == 0)
                 {
-                    var persona = new Persona
-                    {
-                        Dni = pacienteVm.Dni,
-                        ApellidoPaterno = pacienteVm.ApellidoPaterno,
-                        ApellidoMaterno = pacienteVm.ApellidoMaterno,
-                        Nombres = pacienteVm.Nombres,
-                        FechaNacimiento = pacienteVm.FechaNacimiento,
-                        Celular = pacienteVm.Celular,
-                        Correo = pacienteVm.Correo,
-                        Direccion = pacienteVm.Direccion
-                    };
-
-                    await _unidadTrabajo.Persona.Agregar(persona);
-                    await _unidadTrabajo.GuardarCambios();
-
-                    var paciente = new Paciente
-                    {
-                        IdPersona = persona.IdPersona // Al ejecutar SaveChanges(), se actualiza (recupera) el Id del objeto
-                    };
-
-                    await _unidadTrabajo.Paciente.Agregar(paciente);
-                    await _unidadTrabajo.GuardarCambios();
-
-                    var historialMedico = new HistorialMedico
-                    {
-                        IdPaciente = paciente.IdPaciente // Al ejecutar SaveChanges(), se actualiza (recupera) el Id del objeto
-                    };
-
-                    await _unidadTrabajo.HistorialMedico.Agregar(historialMedico);
-                    TempData[DS.Exitosa] = "Paciente agregado exitosamente"; // Será usado para las notificaciones
+                    await AgregarPaciente(pacienteVm);
+                    TempData[DS.Exitosa] = "Paciente agregado exitosamente";
                 }
                 else
                 {
-                    var persona = new Persona
-                    {
-                        IdPersona = (int)pacienteVm.IdPersona!,
-                        Dni = pacienteVm.Dni,
-                        ApellidoPaterno = pacienteVm.ApellidoPaterno,
-                        ApellidoMaterno = pacienteVm.ApellidoMaterno,
-                        Nombres = pacienteVm.Nombres,
-                        FechaNacimiento = pacienteVm.FechaNacimiento,
-                        Celular = pacienteVm.Celular,
-                        Correo = pacienteVm.Correo,
-                        Direccion = pacienteVm.Direccion
-                    };
-
-                    _unidadTrabajo.Persona.Actualizar(persona);
-
-                    TempData[DS.Exitosa] = "Paciente actualizado exitosamente"; // Será usado para las notificaciones
+                    ActualizarPaciente(pacienteVm);
+                    TempData[DS.Exitosa] = "Paciente actualizado exitosamente";
                 }
 
-                await _unidadTrabajo.GuardarCambios(); // Guardar los cambios en la base de datos
+                await _unidadTrabajo.GuardarCambios();
+                transaccion.Commit();
 
-                return RedirectToAction(nameof(Index)); // Redirigir al Index
+                return RedirectToAction(nameof(Index));
             }
-
-            // Si no se hace nada
-            TempData[DS.Error] = "Error al guardar los cambios"; // Notificación de error
-            return View(pacienteVm);
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                TempData[DS.Error] = $"Error al guardar los cambios: {ex.Message}";
+                return View(pacienteVm);
+            }
         }
+
 
         [HttpDelete]
         public async Task<JsonResult> Eliminar(int id)
         {
-            // Buscamos el registro a eliminar
-            var paciente = await _unidadTrabajo.Paciente.ObtenerPorId(id);
+            using var transaccion = _unidadTrabajo.IniciarTransaccion();
 
-            if (paciente is null)
+            try
             {
-                return new JsonResult(new { success = false, message = "Error al borrar el paciente" });
+                // Buscamos el registro a eliminar
+                var paciente = await _unidadTrabajo.Paciente.ObtenerPorId(id);
+
+                if (paciente is null)
+                {
+                    return new JsonResult(new { success = false, message = "Error al encontrar el paciente" });
+                }
+
+                var persona = await _unidadTrabajo.Persona.ObtenerPrimero(pe => pe.IdPersona == paciente.IdPersona);
+
+                if (persona is null)
+                {
+                    return new JsonResult(new { success = false, message = "Error al encontrar la persona" });
+                }
+
+                var historialMedico = await _unidadTrabajo.HistorialMedico.ObtenerPrimero(hm => hm.IdPaciente == paciente.IdPaciente);
+
+                if (historialMedico is null)
+                {
+                    return new JsonResult(new { success = false, message = "Error al encontrar el historial médico" });
+                }
+
+                // En caso se encuentre el registro
+                // Primero borramos el historial médico
+                _unidadTrabajo.HistorialMedico.Remover(historialMedico);
+
+                // Luego, borramos el paciente
+                _unidadTrabajo.Paciente.Remover(paciente);
+
+                // Finalmente borramos la persona asociada al paciente
+                _unidadTrabajo.Persona.Remover(persona);
+
+                // Guardar los cambios
+                await _unidadTrabajo.GuardarCambios();
+
+                // Confirmar transacción
+                transaccion.Commit();
+
+                // Enviamos el mensaje de éxito
+                return new JsonResult(new { success = true, message = "Paciente eliminado exitosamente" });
             }
-
-            var persona = await _unidadTrabajo.Persona.ObtenerPrimero(pe => pe.IdPersona == paciente.IdPersona);
-
-            if (persona is null)
+            catch (Exception)
             {
-                return new JsonResult(new { success = false, message = "Error al borrar el paciente" });
+                transaccion.Rollback();
+                return new JsonResult(new { success = false, message = "Error al borrar el paciente " });
             }
+        }
+        #endregion
 
-            var historialMedico = await _unidadTrabajo.HistorialMedico.ObtenerPrimero(hm => hm.IdPaciente == paciente.IdPaciente);
-
-            if (historialMedico is null)
+        #region METODOS PRIVADOS
+        private async Task AgregarPaciente(PacienteVm pacienteVm)
+        {
+            var persona = new Persona
             {
-                return new JsonResult(new { success = false, message = "Error al borrar el paciente" });
-            }
+                Dni = pacienteVm.Dni,
+                ApellidoPaterno = pacienteVm.ApellidoPaterno,
+                ApellidoMaterno = pacienteVm.ApellidoMaterno,
+                Nombres = pacienteVm.Nombres,
+                FechaNacimiento = pacienteVm.FechaNacimiento,
+                Celular = pacienteVm.Celular,
+                Correo = pacienteVm.Correo,
+                Direccion = pacienteVm.Direccion
+            };
 
-            // En caso se encuentre el registro
-            // Primero borramos el historial médico
-            _unidadTrabajo.HistorialMedico.Remover(historialMedico);
-
-            // Luego, borramos el paciente
-            _unidadTrabajo.Paciente.Remover(paciente);
-
-            // Finalmente borramos la persona asociada al paciente
-            _unidadTrabajo.Persona.Remover(persona);
-
-            // Guardar los cambios
+            await _unidadTrabajo.Persona.Agregar(persona);
             await _unidadTrabajo.GuardarCambios();
 
-            // Enviamos el mensaje de éxito
-            return new JsonResult(new { success = true, message = "Paciente eliminado exitosamente" });
+            if (persona.IdPersona == 0)
+            {
+                throw new Exception("Error al guardar la persona en la base de datos");
+            }
+
+            var paciente = new Paciente
+            {
+                IdPersona = persona.IdPersona
+            };
+
+            await _unidadTrabajo.Paciente.Agregar(paciente);
+            await _unidadTrabajo.GuardarCambios();
+
+            if (paciente.IdPaciente == 0)
+            {
+                throw new Exception("Error al guardar el paciente en la base de datos");
+            }
+
+            var historialMedico = new HistorialMedico
+            {
+                IdPaciente = paciente.IdPaciente
+            };
+
+            await _unidadTrabajo.HistorialMedico.Agregar(historialMedico);
+        }
+
+        private void ActualizarPaciente(PacienteVm pacienteVm)
+        {
+            var persona = new Persona
+            {
+                IdPersona = (int)pacienteVm.IdPersona!,
+                Dni = pacienteVm.Dni,
+                ApellidoPaterno = pacienteVm.ApellidoPaterno,
+                ApellidoMaterno = pacienteVm.ApellidoMaterno,
+                Nombres = pacienteVm.Nombres,
+                FechaNacimiento = pacienteVm.FechaNacimiento,
+                Celular = pacienteVm.Celular,
+                Correo = pacienteVm.Correo,
+                Direccion = pacienteVm.Direccion
+            };
+
+            _unidadTrabajo.Persona.Actualizar(persona);
         }
         #endregion
     }

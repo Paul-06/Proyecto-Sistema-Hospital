@@ -1,4 +1,6 @@
-﻿using SistemaHospital.Models;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore.Storage;
+using SistemaHospital.Models;
 using SistemaHospital.Repository.Abstract;
 
 namespace SistemaHospital.Repository.Implementation
@@ -50,11 +52,16 @@ namespace SistemaHospital.Repository.Implementation
             _context.Dispose(); // Liberar memoria
         }
 
+        public IDbTransaction IniciarTransaccion()
+        {
+            var transaction = _context.Database.BeginTransaction();
+
+            return transaction.GetDbTransaction(); // Devolvemos la transacción
+        }
+
         public async Task GuardarCambios()
         {
             await _context.SaveChangesAsync();
         }
-
-
     }
 }
