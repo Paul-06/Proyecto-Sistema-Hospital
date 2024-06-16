@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "SistemaHospital\\Views\\HMedico\\DetalleHMedico.cshtml",
               "ToolTip": "D:\\Programming\\CSharp\\SistemaHospital\\SistemaHospital\\Views\\HMedico\\DetalleHMedico.cshtml",
               "RelativeToolTip": "SistemaHospital\\Views\\HMedico\\DetalleHMedico.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAuAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-10T00:48:35.312Z",
               "EditorCaption": ""
@@ -123,8 +123,7 @@
               "RelativeToolTip": "SistemaHospital\\Controllers\\HMedicoController.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAQwBUAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T20:09:23.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T20:09:23.322Z"
             },
             {
               "$type": "Document",
